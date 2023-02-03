@@ -20,7 +20,7 @@ jobs:
           terraform_docs_version: 'v0.14.0'
 
       - run: |
-          $output = terraform-docs -v
+          output=$(terraform-docs -v)
           [$output = 'terraform-docs version v0.14.0 6982373 linux/amd64']
           echo [$output = 'terraform-docs version v0.14.0 6982373 linux/amd64']
           exit [$output = 'terraform-docs version v0.14.0 6982373 linux/amd64']
