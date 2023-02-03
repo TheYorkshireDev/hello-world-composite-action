@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: actions/hello-world-composite-action@v0.1.0
+        uses: theyorkshiredev/hello-world-composite-action@v0.1.0
 
       - uses: actions/checkout@v3
       - id: bar
