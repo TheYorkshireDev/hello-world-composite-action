@@ -11,8 +11,7 @@ runs:
   using: "composite"
   steps:
     - name: Install terraform-docs
-      uses: jaxxstorm/action-install-gh-release@v1.9.0
+      uses: ./.github/actions/install-terraform-docs
       with:
-        repo: terraform-docs/terraform-docs
-        tag: ${{ inputs.terraform_docs_version }}
-        cache: enable
+        terraform_docs_version: ${{ inputs.terraform_docs_version }}
+
