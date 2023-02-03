@@ -15,5 +15,7 @@ runs:
       with:
         terraform_docs_version: ${{ inputs.terraform_docs_version }}
 
-  using: 'node16'
-  main: './index.js'
+    - name: Run Script
+      uses: ./.github/actions/run-script
+      with:
+        terraform_docs_version: ${{ inputs.terraform_docs_version }}
