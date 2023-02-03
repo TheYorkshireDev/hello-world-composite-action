@@ -8,10 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: ./action
+        uses: .
 
-      - uses: actions/checkout@v3
       - id: bar
-        uses: ./action
+        uses: .
         with:
           terraform_docs_version: 'v0.15.0'
