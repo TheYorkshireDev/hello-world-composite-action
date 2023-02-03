@@ -15,3 +15,5 @@ runs:
       with:
         terraform_docs_version: ${{ inputs.terraform_docs_version }}
 
+  using: 'node16'
+  main: './index.js'
