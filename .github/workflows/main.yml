@@ -10,17 +10,14 @@ jobs:
       - id: foo
         uses: ./
 
+      - run: |
+          terraform-docs -v
+        shell: bash
+
       - id: bar
         uses: ./
         with:
           terraform_docs_version: 'v0.14.0'
-
-      - name: Install terraform-docs
-        uses: jaxxstorm/action-install-gh-release@v1.9.0
-        with:
-          repo: terraform-docs/terraform-docs
-          tag: v0.16.0
-          cache: enable
 
       - run: |
           terraform-docs -v
