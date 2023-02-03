@@ -1,0 +1,17 @@
+on:
+  pull_request:
+
+jobs:
+  terraform_docs_job:
+    runs-on: ubuntu-latest
+    name: Output given version
+    steps:
+      - uses: actions/checkout@v3
+      - id: foo
+        uses: actions/hello-world-composite-action@v0.1.0
+
+      - uses: actions/checkout@v3
+      - id: bar
+        uses: actions/hello-world-composite-action@v0.1.0
+        with:
+          terraform_docs_version: 'v0.15.0'
