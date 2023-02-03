@@ -11,7 +11,7 @@ runs:
   using: "composite"
   steps:
     - name: Install terraform-docs
-      uses: ./.github/actions/install-terraform-docs
+      uses: ./.github/actions/install-terraform-docs.yml
       with:
         terraform_docs_version: ${{ inputs.terraform_docs_version }}
 
