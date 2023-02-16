@@ -1,0 +1,30 @@
+on:
+  pull_request:
+
+jobs:
+  terraform_docs_job:
+    runs-on: ubuntu-latest
+    name: Output given version
+    steps:
+      - uses: actions/checkout@v3
+      - id: foo
+        uses: ./
+
+      - run: |
+          output=`terraform-docs -v`
+          if [ "$output" != "terraform-docs version v0.16.0 1f686b1 linux/amd64" ]; then
+            exit 1
+          fi
+        shell: bash
+
+      - id: bar
+        uses: ./
+        with:
+          terraform_docs_version: 'v0.14.0'
+
+      - run: |
+          output=`terraform-docs -v`
+          if [ "$output" != "terraform-docs version v0.14.0 6982373 linux/amd64" ]; then
+            exit 1
+          fi
+        shell: bash

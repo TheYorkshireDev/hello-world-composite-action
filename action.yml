@@ -1,13 +1,21 @@
 name: terraform-docs commenter
 description: A Github action for running terraform-docs and commenting any changes required on a PR.
+
 inputs:
   terraform_docs_version:
     description: 'Version of terraform-docs to use'
     required: false
     default: 'v0.16.0'
+
 runs:
   using: "composite"
   steps:
-    - run: |
-        echo terraform-docs version: ${{ inputs.terraform_docs_version }}.
-      shell: bash
+    - name: Install terraform-docs
+      uses: ./.github/actions/install-terraform-docs
+      with:
+        terraform_docs_version: ${{ inputs.terraform_docs_version }}
+
+    - name: Run Script
+      uses: ./.github/actions/run-script
+      with:
+        terraform_docs_version: ${{ inputs.terraform_docs_version }}
