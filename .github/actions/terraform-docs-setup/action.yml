@@ -1,6 +1,3 @@
-name: terraform-docs commenter
-description: A Github action for running terraform-docs and commenting any changes required on a PR.
-
 inputs:
   terraform_docs_version:
     description: 'Version of terraform-docs to use'
