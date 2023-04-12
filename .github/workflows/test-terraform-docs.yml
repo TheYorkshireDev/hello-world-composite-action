@@ -28,6 +28,6 @@ jobs:
       - name: Verify provided terraform-docs
         run: |
           output=`terraform-docs -v`
-          if [ "$output" != "terraform-docs version v0.14.1 6982373 linux/amd64" ]; then
+          if [ "$output" != "terraform-docs version v0.14.0 6982373 linux/amd64" ]; then
             exit 1
           fi
