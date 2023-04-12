@@ -9,8 +9,11 @@ inputs:
 
 runs:
   using: "composite"
-  steps:
-    - shell: bash
-      run: |
-        echo terraform-docs version: ${{ inputs.terraform_docs_version }}.
 
+  steps:
+    - name: Install terraform-docs
+      uses: jaxxstorm/action-install-gh-release@v1.9.0
+      with:
+        repo: terraform-docs/terraform-docs
+        tag: ${{ inputs.terraform_docs_version }}
+        cache: enable
