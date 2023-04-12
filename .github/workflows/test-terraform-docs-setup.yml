@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Install default terraform-docs
-        uses: .github/actions/terraform-docs-setup
+        uses: ./.github/actions/terraform-docs-setup
 
       - name: Verify default terraform-docs
         run: |
@@ -21,7 +21,7 @@ jobs:
           fi
 
       - name: Install provided terraform-docs
-        uses: .github/actions/terraform-docs-setup
+        uses: ./.github/actions/terraform-docs-setup
         with:
           terraform_docs_version: 'v0.14.0'
 
