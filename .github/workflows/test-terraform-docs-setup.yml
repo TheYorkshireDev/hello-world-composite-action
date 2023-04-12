@@ -6,12 +6,12 @@ on:
 jobs:
   terraform_docs:
     runs-on: ubuntu-latest
-    name: terraform-docs
+    name: Configuring terraform-docs
     steps:
       - uses: actions/checkout@v3
 
       - name: Install default terraform-docs
-        uses: ./
+        uses: .github/actions/terraform-docs-setup
 
       - name: Verify default terraform-docs
         run: |
@@ -21,7 +21,7 @@ jobs:
           fi
 
       - name: Install provided terraform-docs
-        uses: ./
+        uses: .github/actions/terraform-docs-setup
         with:
           terraform_docs_version: 'v0.14.0'
 
