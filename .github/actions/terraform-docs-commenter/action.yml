@@ -12,5 +12,5 @@ runs:
       uses: actions/github-script@v6
       with:
         script: |
-          const script = require('./commenter.js')
+          const script = require('./.github/actions/terraform-docs-commenter/commenter.js')
           script({github, context})
