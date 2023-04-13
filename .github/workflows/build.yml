@@ -11,16 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Comment on PR
     steps:
-      - name: "Commenter"
-        uses: actions/github-script@v6
-        with:
-          script: |
-            var commentBody = ``
-            commentBody += `aaa`
+      - uses: actions/checkout@v3
 
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: commentBody
-            })
+      - name: Commenter
+        uses: .
