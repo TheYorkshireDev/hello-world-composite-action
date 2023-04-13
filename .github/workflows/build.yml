@@ -3,6 +3,9 @@ name: "WIP JS"
 on:
   pull_request:
 
+permissions:
+  pull-requests: write
+
 jobs:
   comment_on_pr:
     runs-on: ubuntu-latest
