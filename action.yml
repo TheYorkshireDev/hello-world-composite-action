@@ -8,16 +8,3 @@ runs:
     - name: Install default terraform-docs
       uses: ./.github/actions/terraform-docs-commenter
 
-    # - name: "Commenter"
-    #   uses: actions/github-script@v6
-    #   with:
-    #     script: |
-    #       var commentBody = ``
-    #       commentBody += `terraform-docs version = ${{ inputs.terraform_docs_version }}`
-
-    #       github.rest.issues.createComment({
-    #         issue_number: context.issue.number,
-    #         owner: context.repo.owner,
-    #         repo: context.repo.repo,
-    #         body: commentBody
-    #       })
