@@ -19,7 +19,7 @@ runs:
       with:
         script: |
           var commentBody = ``
-          commentBody += `terraform-docs version = ${inputs.terraform_docs_version}`
+          commentBody += `terraform-docs version = ${{ inputs.terraform_docs_version }}`
 
           github.rest.issues.createComment({
             issue_number: context.issue.number,
