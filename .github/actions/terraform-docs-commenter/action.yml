@@ -1,0 +1,16 @@
+inputs:
+  terraform_docs_version:
+    description: 'Version of terraform-docs to use'
+    required: false
+    default: 'v0.16.0'
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: "Commenter"
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const script = require('./.github/actions/terraform-docs-commenter/commenter.js')
+          script({github, context})
