@@ -1,0 +1,23 @@
+inputs:
+  terraform_docs_version:
+    description: 'Version of terraform-docs to use'
+    required: false
+    default: 'v0.16.0'
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: "Commenter"
+      uses: actions/github-script@v6
+      with:
+        script: |
+          var commentBody = ``
+          commentBody += `terraform-docs version = ${{ inputs.terraform_docs_version }}`
+
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: commentBody
+          })
